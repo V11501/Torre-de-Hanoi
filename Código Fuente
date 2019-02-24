@@ -1,0 +1,25 @@
+#include<iostream>
+#include<stdlib>
+#include<conio.h>
+void hanoi(int num,char A,char C,char B){
+    if(num==1) {
+    cout<<"\t    Mueva el Disco  "<<num<<"   Desde la Torre  "<<A<<   "   Hasta la Torre  "<<C<<endl;
+    }else{
+       hanoi (num-1,A,B,C);
+       cout<<"\t    Mueva el Disco  "<<num<<"   Desde la Torre  "<<A<<   "   Hasta la Torre  "<<C<<endl;
+       hanoi (num-1,B,C,A);
+
+       }
+
+}
+void main(){
+     int n;
+     char A,B,C;
+     cout<<"\n Algoritmo para Resolver el Rompecabezas de las Torres de Hanoi Proyecto 1 UMG  \n\n";
+     cout<<"\n Las Torres son A Principal  B Auxiliar  C Destino \n";
+     cout<<"\n Eliga un Numero de Discos Para Jugar:   ";
+     cin>>n;
+     cout<<"\n";
+     hanoi (n, 'A', 'C', 'B');
+     getch();
+}
